@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+} /*Reseta as configurações automáticas de margem e padding de toda a página
+    box-sizing: border-box faz com que as dimensoes de altura e largura que 
+    colocarmos sempre sejam respeitadas, independentepende do valor do 
+    padding e da border (margin não altera esse valor)*/
+
+header li {
+    display: inline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    margin-left: 16px;
+} /*atrobuto display configura a forma como os elementos são exibidos
+    display: block -> mostra em bloco, nesse caso uma embaixo da outra
+    display: none -> não mostra os elementos*/
+
+header li a {
+    text-decoration: none; /*Não pode er mudado em header li */
+}
+
+.container {
+    width: 1366px; /*Configuração para telas fullhd -> se inserir apenas a altura, a largura se ajusta automaticamente*/
+    margin: 0 auto; /*Mesma coisa que fazer 0 auto 0 auto, que ajusta a marge do topo,direito,baixo,esquerda*/
+}
+
+.articles {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+} /*dispaly: flex -> Faz com que as imagens fiquem uma do lado das outras, separadas pelas tags h3
+    Preciso estudar mais sobre
+    felx-wrap: wrap -> faz com que se, ao adicionarmos um conteúdo novo,
+    o tamanho da linha ultrapasse o tamanho da página, ele vá para uma nova linha
+    justify-content: space-between -> alinha os elementos e os distribui no espaço restante. Nesse caso 10%*/
+
+.articles img {
+    width: 100%;
+} /*Se quisesse, dava para especificar .articles article img, para fazer com que apenas
+    as imagens que estivessem dentro dos containers article fossem alteradas. Porém, visto
+    que a classe article foi criada justamente para conter apenas os article e somene eles,
+    não acho que seja relevante essa especificação */
+
+.articles article{
+    width: 30%; 
+} /*width: faz com que a largura de cada artigo ocupe 30% da página */
+
+body > header {
+    background-color: aqua;
+    /*display: flex; -> por algum motivo, esse comando  não funciomna aqui, mas funciona em header.container */
+    padding: 16px 0;
+} /*Símbolo '>' faz com que apenas os filhos diretos de determinado container sejam levados em conta
+  */
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section {
+    padding: 4px 0 16px 0;
+}
+
+section h2,
+.articles article{
+    padding-bottom: 12px;
+}
+
+#sports .container h2{
+    margin-top: 18px;
+}
+
+.articles article h3{
+    margin-top: 8px;
+    margin-bottom: 8px;
+} /*Nesse caso, trocar padding por margin não muda nada */
+
+.articles article a {
+    background-color: black;
+    color: white;
+    padding:5px;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+
+} /*O padrão de display de um link é 'inline', o que faz com que o nosso link sobreponha o texto.
+    Se trocarmos para inline-block, ele vai para baixo automaticamente*/
+.articles article a:hover {
+    text-decoration: underline;
+}/*'elemento:estado' faz com que o estilo seja aplicado apenas quando o elemento
+    está em determinado estado */
+
+
+body > header li a {
+    color: black;
+}
+
+.articles article p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.articles article h3{
+    font-size: 20px;
+}
+
+section h2{
+    font-size: 28px;
+}
+
+#sports {
+    background-color: rgba(0,255,0,0.1);
+}
+
+#sports .articles article a {
+    background-color: rgb(0, 172, 115)
+}
+
+#economy {
+    background-color: rgb(248, 248, 166);
+}
+
+#economy .articles article a {
+    background-color: gold;
+}
+
+#entertainment {
+    background-color: rgb(254, 210, 127);
+}
+
+#entertainment a{
+    background-color: rgb(255, 104, 81);
+}
+
+#technology {
+    background-color: rgb(219, 219, 254);
+}
+
+#technology a{
+    background-color: blueviolet;
+}
